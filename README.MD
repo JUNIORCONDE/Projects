@@ -1,7 +1,3 @@
-# Criando o conteúdo do README.md solicitado em formato de string
-readme_content = """
-# Projetos em Desenvolvimento
-
 ## Descrição
 Este repositório contém uma coleção de projetos que desenvolvo conforme adquiro mais conhecimento em programação. Utilizo minha experiência e expertise na área fiscal e tributária para criar soluções e automações focadas no setor, aplicando técnicas de desenvolvimento moderno e boas práticas.
 
