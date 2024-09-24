@@ -4,6 +4,7 @@
       "fornecedor": "JUNIOR CONDE",
       "nota_fiscal": "10542",
       "produto": "Teclado Gamer",
+      "quantidade": 10,
       "valor": 1250.0,
       "data_compra": "2024-12-05"
     },
@@ -11,12 +12,22 @@
       "fornecedor": "ROBERTO",
       "nota_fiscal": "15245",
       "produto": "MOUSE PAD",
+      "quantidade": 10,
       "valor": 150.0,
       "data_compra": "15-05-2024"
+    },
+    {
+      "fornecedor": "JORGE",
+      "nota_fiscal": "12125",
+      "produto": "MONITOR 22",
+      "quantidade": "10",
+      "valor": 1250.0,
+      "data_compra": "24/09/2024"
     }
   ],
   "fornecedores": [
     "JUNIOR CONDE",
-    "ROBERTO"
+    "ROBERTO",
+    "JORGE"
   ]
 }
