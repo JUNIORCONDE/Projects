@@ -12,32 +12,20 @@ class Estoque
     nome = gets.chomp
     puts "Fornecedor:"
     fornecedor = gets.chomp
-    puts "Data da compra (YYYY-MM-DD):"
+    puts "Data da compra (DD/MM/AAAA):"
     data_compra = gets.chomp
     puts "Valor da compra:"
     valor_compra = gets.chomp.to_f
     puts "Quantidade:"
     quantidade = gets.chomp.to_i
+    puts "Categoria:"
+    categoria = gets.chomp
 
-    produto = Produto.new(codigo, nome, fornecedor, data_compra, valor_compra, quantidade)
+
+    produto = Produto.new(codigo, nome, fornecedor, data_compra, valor_compra, quantidade, categoria)
     @produtos << produto.to_h
     salvar_estoque
     puts "Produto adicionado com sucesso!"
-  end
-
-  def registrar_entrada
-    puts "Código do produto:"
-    codigo = gets.chomp
-    produto = encontrar_produto(codigo)
-    if produto
-      puts "Quantidade a adicionar:"
-      quantidade = gets.chomp.to_i
-      produto[:quantidade] += quantidade
-      salvar_estoque
-      puts "Entrada registrada com sucesso!"
-    else
-      puts "Produto não encontrado."
-    end
   end
 
   def exibir_estoque

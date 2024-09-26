@@ -8,9 +8,8 @@ class Menu
     loop do
       puts "\nMenu de Opções"
       puts "1. Adicionar Produto"
-      puts "2. Registrar Entrada de Produto"
-      puts "3. Registrar Venda"
-      puts "4. Exibir Estoque"
+      puts "2. Registrar Venda"
+      puts "3. Exibir Estoque"
       puts "0. Sair"
 
       escolha = gets.chomp.to_i
@@ -18,10 +17,8 @@ class Menu
       when 1
         @estoque.adicionar_produto
       when 2
-        @estoque.registrar_entrada
-      when 3
         registrar_venda
-      when 4
+      when 3
         @estoque.exibir_estoque
       when 0
         break
