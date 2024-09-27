@@ -10,7 +10,7 @@ class Produto
     @data_compra = data_compra
     @valor_compra = valor_compra
     @quantidade = quantidade
-    @categoria = categoria  # Inicializa o atributo categoria
+    @categoria = categoria
   end
 
   # Converte o objeto Produto em um hash para ser salvo em JSON.
