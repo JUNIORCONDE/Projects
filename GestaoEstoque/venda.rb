@@ -14,7 +14,7 @@ class Venda
 
       if produto[:quantidade] >= quantidade_venda
         produto[:quantidade] -= quantidade_venda
-        @estoque.salvar_estoque
+        @estoque.atualizar_produto(produto)
         puts "Venda registrada com sucesso!"
       else
         puts "Quantidade insuficiente no estoque."

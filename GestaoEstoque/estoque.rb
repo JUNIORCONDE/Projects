@@ -8,8 +8,8 @@ class Estoque
   def adicionar_produto
     puts "Código do produto:"
     codigo = gets.chomp
-    puts "Nome do produto:"
-    nome = gets.chomp
+    puts "Descrição do Produto:"
+    descricao = gets.chomp
     puts "Fornecedor:"
     fornecedor = gets.chomp
     puts "Data da compra (DD/MM/AAAA):"
@@ -21,8 +21,7 @@ class Estoque
     puts "Categoria:"
     categoria = gets.chomp
 
-
-    produto = Produto.new(codigo, nome, fornecedor, data_compra, valor_compra, quantidade, categoria)
+    produto = Produto.new(codigo, descricao, fornecedor, data_compra, valor_compra, quantidade, categoria)
     @produtos << produto.to_h
     salvar_estoque
     puts "Produto adicionado com sucesso!"
@@ -30,7 +29,20 @@ class Estoque
 
   def exibir_estoque
     @produtos.each do |produto|
-      puts "Código: #{produto[:codigo]}, Nome: #{produto[:nome]}, Quantidade: #{produto[:quantidade]}"
+      puts "Código: #{produto[:codigo]}, Descrição: #{produto[:descricao]}, Quantidade: #{produto[:quantidade]}"
+    end
+  end
+
+  # Tornar o método público para ser acessado pela classe Venda
+  def encontrar_produto(codigo)
+    @produtos.find { |produto| produto[:codigo] == codigo }
+  end
+
+  def atualizar_produto(produto_atualizado)
+    produto = encontrar_produto(produto_atualizado[:codigo])
+    if produto
+      produto[:quantidade] = produto_atualizado[:quantidade]
+      salvar_estoque
     end
   end
 
@@ -46,9 +58,5 @@ class Estoque
 
   def salvar_estoque
     File.write('estoque.json', JSON.pretty_generate(@produtos))
-  end
-
-  def encontrar_produto(codigo)
-    @produtos.find { |produto| produto[:codigo] == codigo }
   end
 end
