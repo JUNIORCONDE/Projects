@@ -1,7 +1,7 @@
 def exibir_menu
   puts "\n----- MENU -----"
   puts "1. Adicionar Contato"
-  puts "2. Exibir Todos os Contatos"
+  puts "2. Exibir Contatos"
   puts "3. Sair"
   print "Escolha uma opção: "
 end
@@ -18,7 +18,7 @@ def adicionar_contato(agenda)
   # Cria um novo contato e adiciona na agenda (um array de contatos)
   contato = Contato.new(nome, numero, cidade)
   agenda << contato
-  puts "Contato adicionado com sucesso!"
+  puts "\nContato adicionado com sucesso!"
 end
 
 def exibir_agenda(agenda)
