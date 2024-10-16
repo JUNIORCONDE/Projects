@@ -1,3 +1,21 @@
+# Classe Contato
+class Contato
+  attr_accessor :nome, :numero, :cidade
+
+  def initialize(nome, numero, cidade)
+    @nome = nome
+    @numero = numero
+    @cidade = cidade
+  end
+
+  def exibir_contato
+    puts "Nome: #{@nome}"
+    puts "Número: #{@numero}"
+    puts "Cidade: #{@cidade}"
+  end
+end
+
+# Método para exibir o menu
 def exibir_menu
   puts "\n----- MENU -----"
   puts "1. Adicionar Contato"
@@ -26,23 +44,6 @@ def exibir_agenda(agenda)
   agenda.each_with_index do |contato, index|
     puts "\nContato ##{index + 1}:"
     contato.exibir_contato
-  end
-end
-
-# Classe Contato
-class Contato
-  attr_accessor :nome, :numero, :cidade
-
-  def initialize(nome, numero, cidade)
-    @nome = nome
-    @numero = numero
-    @cidade = cidade
-  end
-
-  def exibir_contato
-    puts "Nome: #{@nome}"
-    puts "Número: #{@numero}"
-    puts "Cidade: #{@cidade}"
   end
 end
 
